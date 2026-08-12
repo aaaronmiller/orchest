@@ -1,0 +1,11 @@
+# ── Orchestration slots (2026-08-12) — additive entries ──
+- provider: kilo
+  model: kilo/moonshotai/kimi-k3
+- provider: kilo
+  model: kilo/z-ai/glm-5.2
+- provider: openrouter
+  model: openai/gpt-5.6-luna
+- provider: openrouter
+  model: openai/gpt-5.3-codex-spark
+- provider: openrouter
+  model: anthropic/claude-fable-5
