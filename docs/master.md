@@ -47,16 +47,24 @@ because no provider route is configured, not because it was pruned. Fable 5 max
 is price-heavy (155.3% premium over Sol max) — prefer cheaper frontier-equivalent
 slots.
 
-## 2. Quota posture (assess individually; gaps flagged [verify])
+## 2. Quota posture (researched 2026-08-12; sources in parentheses)
 
-- Claude Code subscription: $20/mo. Native Opus slots draw from it. Per-minute
-  request limits at the Anthropic platform tier [verify current RPM].
-- Codex subscription: $20/mo. Antigravity: $20/mo. OpenCode Go: $10/mo.
-- All other providers are free tier: OpenRouter free (per-model ~20 RPM / ~50
-  req/day), Z.ai GLM free tier, DeepSeek free (per-minute caps), Moonshot,
-  Nous (50 RPM / 500,000 TPM per .env comment), NVIDIA NIM free.
-- Every paid AND free tier has per-minute requests; some also token limits.
-  The proxy cascades recover 429/per-minute-quota expiry.
+Subscriptions: Claude Code $20/mo, Codex $20/mo, Antigravity $20/mo, OpenCode
+Go $10/mo. Everything else free tier. Proxy cascades recover 429/per-minute
+quota expiry; no permanent free tier exists on several providers.
+
+| Provider / tier | Limit | Source |
+|---|---|---|
+| Claude Code subscription | No RPM/ITPM — 5-hour rolling window + weekly cap; shared buckets with claude.ai/Cowork; Pro/Max limits doubled 2026-05-06 | claude.com / anthropic.com |
+| Claude API (if used directly) | Tier-based RPM/ITPM/OTPM; Tier 1 ITPM raised to 500k (2026-05) | claude.com |
+| OpenRouter free (`:free`) | **20 RPM** all free models; **50 req/day** (1,000/day after $10+ lifetime credits); 429 on exceed | openrouter.ai |
+| DeepSeek (direct API) | No RPM/TPM — **concurrency**: V4-Pro 500, V4-Flash 2,500 concurrent; no permanent free tier | deepseek.com |
+| Z.ai GLM (Lite/Pro/Max) | Dynamic, tier-based; community-reports of undocumented low concurrency + 429s even in-quota; verify at z.ai/manage-apikey/rate-limits | z.ai |
+| Moonshot Kimi | **No free tier**; min ~$1 top-up; spend-based tiers (0-5) | moonshot docs |
+| NVIDIA NIM free | ~**40 RPM** prototyping; ~1,000 inference credits/mo; no free upgrades | build.nvidia.com |
+| Nous (local .env comment) | 50 RPM / 500,000 TPM | claude-code-proxy/.env |
+| Antigravity free tier | [verify] — covered by $20 sub | — |
+| OpenCode Zen free | [verify] — free models share account-level caps | opencode.ai |
 
 ## 3. Mechanism (verified against Claude Code 2.1.220)
 
@@ -101,6 +109,8 @@ Frontmatter fields Claude Code actually reads: `name`, `description`, `tools`,
   failures.
 - Orchestrator never changes an agent's effort; it selects the agent.
 - Heavy bursts → substituted slots; native Opus reserved for high-value work.
+- **XBIG primary pinned 2026-08-12**: kimi-k3 (strict frontier, $0.84) — not
+  gpt-5.6-sol ($1.23); the sol-max intent rides the KVK3 chain via the slot map.
 
 ## 4. Per-harness patterns
 

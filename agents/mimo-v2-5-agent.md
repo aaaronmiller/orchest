@@ -8,7 +8,7 @@ tools: [Read, Bash, Grep, Glob, Edit, Write, Skill]
 
 ## Identity
 What this agent actually is: **MiMo-V2.5** from Xiaomi.
-Calibrated capability (AA-equivalent, ARDF unified evidence): **41.96/100** (MiMo-V2.5); 43.39 for MiMo-V2.5-Pro — verify against the Pareto frontier graph whether the Pro config is the intended slot.
+Calibrated capability (AA-equivalent, ARDF unified evidence): **41.96/100** — MiMo-V2.5 (strict Pareto frontier member, B tier). MiMo-V2.5-Pro (43.39, $0.0347) is economically dominated by GLM-5.2 (max); the frontier graph intends the non-Pro.
 Cost per task: **$0.011** (ARDF task-price model).
 Provider quota: free-tier per-minute request limits; token limits apply.
 Substitution: **YES — routed via claude-code-proxy.** Substituted at the proxy layer to a free backend (SMALL tier cascade: deepseek-v4-flash-free / nemotron free tiers); cascade recovers failures and per-minute quota expiry.
