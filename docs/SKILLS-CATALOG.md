@@ -206,8 +206,8 @@
 | soft-skill | Teaches the AI to design like a high-end agency. Defines the exact fonts, spacing, shadows, card structures, and animations that m |
 | stitch-skill | Semantic Design System Skill for Google Stitch. Generates agent-friendly DESIGN.md files that enforce premium, anti-generic UI sta |
 | stop-slop | Remove AI writing patterns from prose. Use when drafting, editing, or reviewing text to eliminate predictable AI tells. |
-| strata-authoring | ALWAYS invoke when the user wants to start a new project, define a feature, |
-| strata-implementing | 'Use when specifications are authored and ready to build: running the |
+| spec-prep-authoring | ALWAYS invoke when the user wants to start a new project, define a feature, |
+| spec-prep-implementing | 'Use when specifications are authored and ready to build: running the |
 | strategic-compact | 'Suggests manual /compact at logical intervals — after completing a milestone, |
 | subagent-driven-development | Use when executing implementation plans with independent tasks. Dispatches |
 | svelte | Svelte 5 patterns including TanStack Query mutations, shadcn-svelte components, |
@@ -267,8 +267,8 @@
 | multi-transcript-synthesis | | |
 | skill-audit-skill | 'Audit skill ecosystems for quality, redundancy, structural integrity, |
 | skill-creator | Create new skills, modify and improve existing skills, and measure skill |
-| strata-authoring | ALWAYS invoke when the user wants to start a new project, define a feature, |
-| strata-implementing | 'Use when specifications are authored and ready to build: running the |
+| spec-prep-authoring | ALWAYS invoke when the user wants to start a new project, define a feature, |
+| spec-prep-implementing | 'Use when specifications are authored and ready to build: running the |
 | ui-ux-doctor | "Audits and improves existing UI/UX. Triggers on: review, fix, audit, improve, check, redesign, accessibility, what's wrong, best  |
 | userprompt-mine-skill | "Use when: mining sessions, extracting prompts, searching past transcripts. Action: Search and extract developer prompt histories  |
 | weekly-report-suite | >- |
